@@ -1,0 +1,56 @@
+# Core Data Science & ML
+numpy==1.26.4
+pandas==2.2.1
+scipy==1.12.0
+scikit-learn==1.4.1.post1
+
+# Deep Learning
+torch==2.2.1
+tensorflow==2.16.1
+transformers==4.38.2
+
+# Financial Data & Analysis
+yfinance==0.2.37
+pandas-ta==0.3.14b0
+ta-lib==0.4.28
+alpaca-py==0.20.1
+
+# LLM Integration
+openai==1.14.0
+langchain==0.1.11
+langchain-community==0.0.27
+
+# Backtesting & Strategy
+backtrader==1.9.78.123
+vectorbt==0.25.5
+zipline-reloaded==3.0.4
+
+# Web Framework
+fastapi==0.110.0
+uvicorn==0.28.0
+pydantic==2.6.3
+sqlalchemy==2.0.28
+alembic==1.13.1
+
+# Database
+psycopg2-binary==2.9.9
+redis==5.0.2
+
+# Async & Task Queue
+celery==5.3.6
+aiohttp==3.9.3
+
+# Monitoring & Logging
+prometheus-client==0.20.0
+loguru==0.7.2
+
+# Testing
+pytest==8.1.1
+pytest-asyncio==0.23.5
+pytest-cov==4.1.0
+
+# Utilities
+python-dotenv==1.0.1
+pyyaml==6.0.1
+requests==2.31.0
+websockets==12.0

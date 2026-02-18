@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db:5432/trading
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://backend:8000
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=trading
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
